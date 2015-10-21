@@ -22,7 +22,7 @@
         <div class="col-xs-6">
           <!-- List Group -->
           <ul class="list-group">
-            <li class="btn btn-default list-group-item" ng-repeat='p in vm.people'>
+            <li class="btn btn-default list-group-item" ng-repeat='p in vm.people' ng-click='vm.showPersonBio(p)'>
               {{p.name}}
             </li>
           </ul>
@@ -39,17 +39,26 @@
         <!-- Individual Person Panel -->
         <div class="col-xs-6">
           <div class="panel panel-default">
+            <!-- Panel Heading -->
             <div class="panel-heading">
-              <h3 class="text-center">Bio</h3>
+              <h3 class="text-center">Bio: {{vm.person.name}}</h3>
             </div>
+            <!-- Panel Body -->
             <div class="panel-body">
-            
+              <div class="">
+                <ul class="list-group" ng-if='vm.person'>
+                  <li class="list-group-item"><p><strong>Name: </strong>{{vm.person.name}}</p></li>
+                  <li class="list-group-item"><p><strong>Y.O.B: </strong>{{vm.person.birth_year}}</p></li>
+                  <li class="list-group-item"><p><strong>Eye Color: </strong>{{vm.person.eye_color}}</p></li>
+                  <li class="list-group-item"><p><strong>Gender: </strong>{{vm.person.gender}}</p></li>
+                  <li class="list-group-item"><p><strong>Skin Color: </strong>{{vm.person.skin_color}}</p></li>
+                  <li class="list-group-item"><p><strong>Height: </strong>{{vm.person.height}}</p></li>
+                </ul>
+              </div>
             </div>
           </div>
-
         </div>
-      </div>
-    </div>
-
+      </div><!-- END SHOW PEOPLE -->
+    </div><!-- END CONTAINER -->
   </body>
 </html>

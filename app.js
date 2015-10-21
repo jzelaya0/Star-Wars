@@ -49,6 +49,7 @@
       vm.api = SwFactory;
       vm.data = []
       vm.people = [];
+      vm.person = null;
 
       //Get list of people on Page load (10)
       vm.api.getAllPeople()
@@ -58,7 +59,7 @@
           console.log(vm.data);
           console.log(vm.people);
         })
-        
+
       //Function to Show previous list of people
       //Bind data.next to data array and pass it through the function
       vm.showPreviousPeople = function(prev){
@@ -80,7 +81,12 @@
           })
       }
 
+      //Grab Individual Person Bio from vm.people
+      vm.showPersonBio = function(person){
+        console.log(person);
+        vm.person = person;
+      }
 
-    }
+    }//End swController
 
 }());
