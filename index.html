@@ -18,10 +18,13 @@
 
       <!-- SHOW ALL PEOPLE -->
       <div class="row">
+        <!-- People Panel -->
         <div class="col-xs-6">
           <!-- List Group -->
           <ul class="list-group">
-            <li class="list-group-item" ng-repeat='p in vm.people'>{{p.name}}</li>
+            <li class="btn btn-default list-group-item" ng-repeat='p in vm.people'>
+              {{p.name}}
+            </li>
           </ul>
           <!-- Button Group -->
           <div class="btn-group btn-group-justified">
@@ -32,6 +35,18 @@
               <button class="btn btn-primary" ng-if='vm.data.next' ng-click='vm.showNextPeople(vm.data.next)'>Next</button>
             </div>
           </div>
+        </div>
+        <!-- Individual Person Panel -->
+        <div class="col-xs-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="text-center">Bio</h3>
+            </div>
+            <div class="panel-body">
+            
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
