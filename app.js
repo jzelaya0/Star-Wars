@@ -13,9 +13,14 @@
     // ==================================================
     // FACTORY
     // ==================================================
-    function swFactory(http) {
+    function swFactory($http) {
       console.log('factory');
+      var allPeopleUrl = 'http://swapi.co/api/people/?format=json'
       var swFactory = {};
+
+      swFactory.getAllPeople = function(){
+        return $http.get(allPeopleUrl);
+      }
 
       return swFactory;
     }
@@ -26,7 +31,14 @@
     // ==================================================
 
     function swController(SwFactory) {
-      console.log('hello');
+      var vm = this;
+      vm.api = SwFactory;
+
+      vm.api.getAllPeople()
+        .success(function(data){
+          console.log(data);
+        })
+
     }
 
 }());
