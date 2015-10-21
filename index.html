@@ -10,10 +10,19 @@
     <!-- JAVASCRIPT -->
     <script src="/app.js" charset="utf-8"></script>
   </head>
-  <body ng-controller='SwController as swCtrl'>
+  <body ng-controller='SwController as vm'>
     <div class="container-fluid">
       <div class="jumbotron">
         <h1 class="text-center">Star Wars!</h1>
+      </div>
+
+      <!-- SHOW ALL PEOPLE -->
+      <div class="row">
+        <div class="col-xs-6">
+          <ul class="list-group">
+            <li class="list-group-item" ng-repeat='p in vm.people'>{{p.name}}</li>
+          </ul>
+        </div>
       </div>
 
     </div>

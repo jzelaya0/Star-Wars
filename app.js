@@ -33,10 +33,12 @@
     function swController(SwFactory) {
       var vm = this;
       vm.api = SwFactory;
+      vm.people = [];
 
       vm.api.getAllPeople()
         .success(function(data){
           console.log(data);
+          vm.people = data.results;
         })
 
     }
